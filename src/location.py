@@ -38,7 +38,8 @@ class Location:
             del location["campus_id"]
             location["user_id"] = location["user"]["login"]
             del location["user"]
-        with open("locations.json", 'w') as f:
+        os.makedirs('data', exist_ok=True)
+        with open("data/locations.json", 'w') as f:
             f.writelines(json.dumps(self.locations, indent=2))
         return self.locations
 
@@ -64,8 +65,10 @@ class Location:
                 return ("I am around upstairs near male toilet!")
         return ""
 
-    def search(self, locations, username):
-        for location in locations:
+    def search(self, username):
+        if not self.locations:
+            self.refresh_locations()
+        for location in self.locations:
             if username == location["user_id"]:
                 return self.resolve_location(location["host"])
         else:
@@ -73,7 +76,7 @@ class Location:
 
     def _get_location(self):
         try:
-            with open("locations.json", 'r') as f:
+            with open("data/locations.json", 'r') as f:
                 self.locations = json.load(f)
         except FileNotFoundError:
             self.refresh_locations()
@@ -82,5 +85,5 @@ class Location:
 if __name__ == "__main__":
     username = input("Enter username: ")
     l = Location()
-    location = l.search(l.locations, username)
+    location = l.search(username)
     print(location)
