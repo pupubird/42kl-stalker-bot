@@ -1,6 +1,10 @@
 from src.location import Location
 
-username = input("Enter username: ")
 l = Location()
+
+# Optional
+l.refresh_locations()
+
+username = input("Enter username: ")
 location = l.search(username)
 print(location)
