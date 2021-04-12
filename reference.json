@@ -11,13 +11,17 @@
     "z02": "I am around upstairs near to the stairs!",
     "z03": "I am around downstairs drinking station!",
     "z04": "I am around upstairs near to the stairs!",
-    "z05": "I am around downstairs drinking station!"
+    "z05": "I am around downstairs drinking station!",
+    "z06": "I am around upstairs nearing the stairs!",
+    "z08": "I am around upstairs nearing the stairs!"
   },
   "u82": {
     "z01": "I am around downstairs kitchen area!",
     "z02": "I am around upstairs near male toilet!",
     "z03": "I am around downstairs kitchen area!",
     "z04": "I am around upstairs near male toilet!",
-    "z05": "I am around downstairs kitchen area!"
+    "z05": "I am around downstairs kitchen area!",
+    "z06": "I am around upstairs near drinking station!",
+    "z08": "I am around upstairs near drinking station!"
   }
 }
