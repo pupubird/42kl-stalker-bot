@@ -46,23 +46,11 @@ class Location:
     def resolve_location(self, host):
         area = host[0:3]
         zone = host[3:6]
-        if area == "u80":
-            if zone == "z01" or zone == "z03" or zone == "z05":
-                return ("I am around downstairs behind Thila table!")
-            if zone == "z04" or zone == "z02":
-                return ("I am around upstairs behind office!")
-        if area == "u81":
-            if zone == "z01" or zone == "z03" or zone == "z05":
-                return ("I am around downstairs drinking station!")
-            if zone == "z02" or zone == "z04":
-                return ("I am around upstairs near to the stairs!")
-            if zone == "z06" or zone == "z08":
-                return ("I am around upstairs drinking station!")
-        if area == "u82":
-            if zone == "z01" or zone == "z03" or zone == "z05":
-                return ("I am around downstairs kitchen area!")
-            if zone == "z02" or zone == "z04" or zone == "z06" or zone == "z08":
-                return ("I am around upstairs near male toilet!")
+        with open('reference.json', 'r') as f:
+            references = json.load(f)
+            area_ref = references.get(area, None)
+            if area_ref:
+                return area_ref[zone]
         return ""
 
     def search(self, username):

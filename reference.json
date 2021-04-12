@@ -1,0 +1,23 @@
+{
+  "u80": {
+    "z01": "I am around downstairs behind Thila table!",
+    "z02": "I am around upstairs behind office!",
+    "z03": "I am around downstairs behind Thila table!",
+    "z04": "I am around upstairs behind office!",
+    "z05": "I am around downstairs behind Thila table!"
+  },
+  "u81": {
+    "z01": "I am around downstairs drinking station!",
+    "z02": "I am around upstairs near to the stairs!",
+    "z03": "I am around downstairs drinking station!",
+    "z04": "I am around upstairs near to the stairs!",
+    "z05": "I am around downstairs drinking station!"
+  },
+  "u82": {
+    "z01": "I am around downstairs kitchen area!",
+    "z02": "I am around upstairs near male toilet!",
+    "z03": "I am around downstairs kitchen area!",
+    "z04": "I am around upstairs near male toilet!",
+    "z05": "I am around downstairs kitchen area!"
+  }
+}
