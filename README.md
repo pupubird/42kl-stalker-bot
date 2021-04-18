@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://github.com/pupubird/42kl-stalker-bot/blob/master/img/logo.png" alt="Project logo"></a>
+  <img width=200px height=200px src="https://github.com/pupubird/42kl-stalker-bot/blob/master/img/logo.png" alt="Project logo"></a>
 </p>
 
 <h3 align="center">42KL Stalker Bot 😈</h3>
@@ -9,7 +9,7 @@
 
 ---
 
-<p align="center"> No more troubles on stalking student location within the campus 🥳 (JK It's just a bot that tells you where the user is currently sitting at)
+<p align="center"> Easily stalk any student's location within the campus 🥳 (JK It's just a bot that tells you where the user is currently sitting at)
     <br> 
 </p>
 
@@ -23,12 +23,12 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Having issues on knowing where the person is for your evaluation? Here is a few scenarios where this bot will be helpful:
+Having issues with knowing where a person is for your evaluation? Here are a few scenarios where this bot would be helpful:
 
 ```joke
-A: @XXX May I know where you? I have an evaluation with you 10 minutes later!
+A: @XXX May I know where you? I have an evaluation with you in 10 minutes!
 
-B: *Disappeared for 1 hour as he / she does not check discord*
+B: *Disappeared for 1 hour as he / she did not check discord*
 
 A: *Project failed because couldn't get evaluation done within the period of time*
 ```
@@ -38,9 +38,9 @@ Now, with this bot,
 ```
 A: /find XXX
 
-Wonderful generous 42kl stalker bot: XXX is currently sitting at XXX!
+Wonderful generous 42kl stalker bot: XXX is currently sitting at YYY!
 
-A: *Evaluation get done in time and got 100 mark!*
+A: *Evaluation gets done in time and got 100 points! 💯*
 ```
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
@@ -65,9 +65,9 @@ pip-compile
 pip3 install -r requirements.txt
 ```
 
-Copy `.env.example` and paste in `.env`, fill up all the information!
+Copy `.env.example` and paste in `.env` and fill up all the information!
 
-then...
+Then...
 
 ```
 python3 main.py
@@ -77,7 +77,7 @@ And you are done!
 
 ## 🎈 Usage <a name="usage"></a>
 
-Just add the bot into your discord channel, type `/find <username>` and enjpy!
+Just add the bot into your Discord channel, type `/find <username>` and enjoy!
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -87,4 +87,4 @@ Just add the bot into your discord channel, type `/find <username>` and enjpy!
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@pupubird](https://github.com/pupubird) - Dealing with 42 API and writing SDK
-- [@easonchai](https://github.com/easonchai) - Create Discord bot and discord commands
+- [@easonchai](https://github.com/easonchai) - Created Discord bot, Discord commands & editing
