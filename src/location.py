@@ -1,4 +1,5 @@
 from dotenv import load_dotenv
+from datetime import datetime
 import requests
 import json
 import os
@@ -33,13 +34,15 @@ class Location:
 
         self.locations = list(filter(lambda x: x["end_at"] == None, locations))
 
-        os.makedirs("data", exist_ok=True)
+        # Clearning up locations array
         for location in self.locations:
             del location["id"]
             del location["primary"]
             del location["campus_id"]
             location["user_id"] = location["user"]["login"]
             del location["user"]
+        # Save it to disk to access later
+        os.makedirs("data", exist_ok=True)
         with open("data/locations.json", "w") as f:
             print("Saving locations to file")
             f.writelines(
@@ -47,6 +50,10 @@ class Location:
                     self.locations if len(self.locations) > 0 else None, indent=2
                 )
             )
+        # Log down the current action for future investigation
+        os.makedirs("logs", exist_ok=True)
+        with open(f"logs/{datetime.now().strftime('%Y%m%d')}.log", "a") as f:
+            f.write("Updated locations on: " + str(datetime.now()) + "\n")
         return self.locations
 
     def resolve_location(self, host):
