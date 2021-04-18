@@ -8,8 +8,9 @@ load_dotenv()
 
 class Location:
     def __init__(self):
-        self.client_id = os.getenv('CLIENT_ID_42')
-        self.client_secret = os.getenv('CLIENT_SECRET_42')
+        self.client_id = os.getenv("CLIENT_ID_42")
+        self.client_secret = os.getenv("CLIENT_SECRET_42")
+        self.locations = []
         self._get_location()
 
     def refresh_locations(self):
@@ -32,21 +33,26 @@ class Location:
 
         self.locations = list(filter(lambda x: x["end_at"] == None, locations))
 
+        os.makedirs("data", exist_ok=True)
         for location in self.locations:
             del location["id"]
             del location["primary"]
             del location["campus_id"]
             location["user_id"] = location["user"]["login"]
             del location["user"]
-        os.makedirs('data', exist_ok=True)
-        with open("data/locations.json", 'w') as f:
-            f.writelines(json.dumps(self.locations, indent=2))
+        with open("data/locations.json", "w") as f:
+            print("Saving locations to file")
+            f.writelines(
+                json.dumps(
+                    self.locations if len(self.locations) > 0 else None, indent=2
+                )
+            )
         return self.locations
 
     def resolve_location(self, host):
         area = host[0:3]
         zone = host[3:6]
-        with open('reference.json', 'r') as f:
+        with open("reference.json", "r") as f:
             references = json.load(f)
             area_ref = references.get(area, None)
             if area_ref:
@@ -56,6 +62,8 @@ class Location:
     def search(self, username):
         if not self.locations:
             self.refresh_locations()
+        if len(self.locations) == 0:
+            return None
         for location in self.locations:
             if username == location["user_id"]:
                 return self.resolve_location(location["host"])
@@ -64,9 +72,11 @@ class Location:
 
     def _get_location(self):
         try:
-            with open("data/locations.json", 'r') as f:
+            with open("data/locations.json", "r") as f:
+                print("Locations loaded from file")
                 self.locations = json.load(f)
         except FileNotFoundError:
+            print("File not found")
             self.refresh_locations()
 
 
