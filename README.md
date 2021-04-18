@@ -3,9 +3,8 @@
  <img width=200px height=200px src="https://github.com/pupubird/42kl-stalker-bot/blob/master/img/robber.png" alt="Project logo"></a>
 </p>
 
-> Icons made by [Nhor Phai](https://www.flaticon.com/authors/nhor-phai) from [www.flaticon.com](www.flaticon.com)
-
 <h3 align="center">42KL Stalker Bot 😈</h3>
+> _Icons made by [Nhor Phai](https://www.flaticon.com/authors/nhor-phai) from [www.flaticon.com](www.flaticon.com)_
 
 ---
 
