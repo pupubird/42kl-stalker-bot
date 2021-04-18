@@ -28,7 +28,7 @@ Having issues with knowing where a person is for your evaluation? Here are a few
 ```joke
 A: @XXX May I know where you? I have an evaluation with you in 10 minutes!
 
-B: *Disappeared for 1 hour as he / she did not check discord*
+B: *Disappeared for 1 hour as he / she did not check Discord*
 
 A: *Project failed because couldn't get evaluation done within the period of time*
 ```
@@ -49,7 +49,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You need `python3` and a discord bot!
+You need `python3` and a Discord bot!
 
 ### Installing
 
