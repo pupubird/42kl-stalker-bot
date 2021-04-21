@@ -6,14 +6,20 @@ from src.location import Location
 load_dotenv()
 client = discord.Client()
 
-l = Location()
+try:
+    l = Location()
+except Exception:
+    print("Invalid 42 API Key.")
 
 
 async def get_location(message, username):
     await message.channel.send("Finding {}!".format(username))
 
-    location = l.search(username)
-
+    try:
+        location = l.search(username)
+    except Exception:
+        await message.channel.send("42 API Key expired!")
+        return
     if not location:
         await message.channel.send(
             "{} is not in the building!\nPlease check if you entered the correct username!".format(

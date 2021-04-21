@@ -25,6 +25,9 @@ class Location:
             },
         )
 
+        if res.status_code != 200:
+            raise Exception("Invalid 42 API key")
+
         access_token = res.json()["access_token"]
 
         locations = requests.get(
