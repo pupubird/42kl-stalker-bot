@@ -14,6 +14,7 @@ except Exception:
 
 async def get_location(message, username):
     await message.channel.send("Finding {}!".format(username))
+    l.refresh_locations()
 
     try:
         location = l.search(username)
